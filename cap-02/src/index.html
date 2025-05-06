@@ -1,61 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calculadora de Descuento</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                text-align: center;
-                margin: 50px;
-            }
-            input, button {
-                margin: 10px;
-                padding: 8px;
-            }
-            #resultado {
-                margin-top: 20px;
-                font-size: 1.2em;
-                font-weight: bold;
-            }
-        </style>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Calculadora de Descuento
+    </title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
 
-        <h2>Calculadora de Descuento</h2>
-        <label for="precio">Precio Original:</label>
-        <input type="number" id="precio" placeholder="Ingrese el precio">
+    <h2>
+        Calculadora de Descuento
+    </h2>
+    <label for="precio">
+        Precio Original:
+    </label>
+    <input type="number" id="precio" placeholder="Ingrese el precio">
 
-        <label for="descuento">Descuento (%):</label>
-        <input type="number" id="descuento" placeholder="Ingrese el porcentaje">
+    <label for="descuento">
+        Descuento (%):
+    </label>
+    <input type="number" id="descuento" placeholder="Ingrese el porcentaje">
 
-        <button onclick="calcularDescuento()">Calcular</button>
+    <button onclick="calcularDescuento()">
+        Calcular
+    </button>
 
-        <div id="resultado"></div>
+    <div id="resultado"></div>
 
-        <script>
-            function calcularDescuento() {
-                let precioOriginal = parseFloat(document.getElementById("precio").value);
-                let descuento = parseFloat(document.getElementById("descuento").value);
-                let resultadoDiv = document.getElementById("resultado");
-
-                if (isNaN(precioOriginal) || isNaN(descuento)) {
-                    resultadoDiv.innerHTML = "Por favor, ingrese valores numéricos válidos.";
-                    return;
-                }
-
-                let cantidadDescontada = (precioOriginal * descuento) / 100;
-                let precioFinal = precioOriginal - cantidadDescontada;
-
-                resultadoDiv.innerHTML = `
-                    <p>Precio Original: $${precioOriginal.toFixed(2)}</p>
-                    <p>Descuento: ${descuento}%</p>
-                    <p>Cantidad Descontada: $${cantidadDescontada.toFixed(2)}</p>
-                    <p>Precio Final: $${precioFinal.toFixed(2)}</p>
-                `;
-            }
-        </script>
-
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
